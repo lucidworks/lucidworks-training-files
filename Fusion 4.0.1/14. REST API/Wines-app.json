@@ -1,0 +1,11 @@
+{
+	"id": "General",
+	"name": "General",
+	"description": "This app can host many collections",
+	"dataUri": "/admin/App-Tile-01-460x160.png",
+	"properties": {
+		"headerImageName": "headerImage1",
+		"tileColor": "apps-darkblue",
+		"previousCollectionId": "General"
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "id" : "main",
+  "queryPipeline" : "General",
+  "collection" : "General",
+  "searchHandler" : "select",
+  "params" : [ {
+    "key" : "q",
+    "value" : "*:*",
+    "policy" : "replace"
+  }, {
+    "key" : "wt",
+    "value" : "xml",
+    "policy" : "replace"
+  } ]
+}	

@@ -1,0 +1,6 @@
+{
+  "type" : "system-logs-cleanup",
+  "id" : "delete-system-logs-gt-1-day",
+  "collection" : "logs",
+  "days" : 0
+}
