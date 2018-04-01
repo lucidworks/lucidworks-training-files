@@ -7,7 +7,7 @@ If you have any questions or issues regarding this Repository or any of the file
 
 ---
 
-Download the whole training-files repo
+### Download the whole training-files repo
 
 If downloading to your local computer: 
 1. At the [root](https://github.com/lucidworks/lucidworks-training-files) of the training-files repo, click on the button **Clone or Download** then Download ZIP. 
@@ -18,7 +18,7 @@ If downloading into a remote AWS instance while ssh'd:
 
 ---
 
-Downloading specific files or folders 
+### Downloading specific files or folders 
 
 Github only supports downloading the whole repo from its root. 
 If you want to download a specific file or folder, here are some alternatives. 
@@ -29,7 +29,7 @@ If you want to download a specific file or folder, here are some alternatives.
 
 ---
 
-DownGit Download Instructions
+### DownGit Download Instructions
 
 1 Navigate to the file or folder you want to download, and copy its URL from the browser URL bar
 2 From [DownGit](https://minhaskamal.github.io/DownGit/#/home), paste the URL unto the textbox
@@ -41,7 +41,7 @@ DownGit Download Instructions
 
 ---
 
-Download a ZIP archive found in a module -- instructions 
+### Download a ZIP archive found in a module -- instructions 
 
 1 Go to the module folder 
 2 Confirm that there is a ZIP file there. Click on the ZIP 
