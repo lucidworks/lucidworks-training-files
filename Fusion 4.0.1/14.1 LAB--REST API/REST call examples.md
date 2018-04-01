@@ -5,20 +5,15 @@
 **cURL**
 
 `curl -u admin:Lucidworks1 -X PUT -H 'Content-type: application/json' -d '{"solrParams":{"replicationFactor":1,"numShards":1}}' http://localhost:8764/api/collections/Wines`
-
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/collections/Wines`
-
 `curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/collections/Wines` (deletes only collection in fusion only) 
-
 `curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/collections/Wines?solr=True&purge=True&pipelines=True` (deletes all solr collections and associated pipelines) 
+
 **Poweshell**
 
 `.\irm.ps1 -Method PUT -Uri "http://54.210.206.151:8764/api/collections/Wines" -Body '{"solrParams":{"replicationFactor":1,"numShards":1}}'`
-
 `.\irm.ps1 -Method GET -Uri "http://54.210.206.151:8764/api/collections/Wines" `
-
 `.\irm.ps1 -Method DELETE -Uri "http://54.210.206.151:8764/api/collections/Wines"` #deletes only collection in fusion, not solr
-
 `.\irm.ps1 -Method DELETE -Uri "http://54.210.206.151:8764/api/collections/Wines?solr=True&purge=True&pipelines=True"` #deletes all solr collections and associated pipelines
 
 
@@ -26,16 +21,12 @@
 **cURL**
 
 `curl -u admin:Lucidworks1 -X POST -H 'Content-type: application/json' -d @JSON/wines-datasource.json http://localhost:8764/api/connectors/datasources`
-
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/connectors/datasources/wines-datasource`
-
 `curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/connectors/datasources/wines-datasource`
+
 **Poweshell**
-
 `.\irm.ps1 -Method POST -Uri "http://54.210.206.151:8764/api/connectors/datasources" -Infile "JSON/wines-datasource.json"`
-
 `.\irm.ps1 -Method GET -Uri "http://54.210.206.151:8764/api/connectors/datasources/wines-datasource"`
-
 `.\irm.ps1 -Method DELETE -Uri "http://54.210.206.151:8764/api/connectors/datasources/wines-datasource"`
 
 
