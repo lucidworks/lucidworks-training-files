@@ -3,7 +3,7 @@ This is the public repo for Lucidworks Training where you will find supporting f
 
 Please navigate to the appropriate training folder to see these files. 
 
-If you have any questions or issues regarding this Repository or any of the files included here, please send us an email: trainers@lucidworks.com
+If you have any questions or issues regarding this Repository or any of the files included here, please send us an email: trainers@lucidworks.com  
 
 ---
 
