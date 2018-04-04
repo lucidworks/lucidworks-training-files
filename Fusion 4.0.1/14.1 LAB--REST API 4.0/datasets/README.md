@@ -13,13 +13,14 @@ Since you are not authenticated into Kaggle while logged into the AWS instance, 
 3. Open the **kaggle.json** file with a text editor and copy the contents of the file
 4. ssh into your remote AWS instance and run the following commands
 ```
-  * mkdir ~/.kaggle
-  * vi ~/.kaggle/kaggle.json
-  * type the letter "i" to be in **insert mode**
-  * paste the contents of your local json file (from step 3)
-  * to exit and save, type **[esc key] : wq!**
-  * chmod 600 ~/.kaggle/kaggle.json```
+mkdir ~/.kaggle
+vi ~/.kaggle/kaggle.json
+type the letter "i" to be in **insert mode**
+paste the contents of your local json file (from step 3)
+to exit and save, type **[esc key] : wq!**
+chmod 600 ~/.kaggle/kaggle.json```
+  
 5. You can now download the **winemag-data_first150k.csv** dataset for this module: 
 ```
-  * kaggle datasets download -d zynicide/wine-reviews -f winemag-data_first150k.csv -p ~/
-  * unzip winemag-data_first150k.csv.zip```
+kaggle datasets download -d zynicide/wine-reviews -f winemag-data_first150k.csv -p ~/
+unzip winemag-data_first150k.csv.zip```
