@@ -31,9 +31,9 @@ If you want to download a specific file or folder, here are some alternatives.
 
 ### DownGit Download Instructions
 
-1 Navigate to the file or folder you want to download, and copy its URL from the browser URL bar
-2 From [DownGit](https://minhaskamal.github.io/DownGit/#/home), paste the URL unto the textbox
-3 You have 2 options: 
+1. Navigate to the file or folder you want to download, and copy its URL from the browser URL bar
+2. From [DownGit](https://minhaskamal.github.io/DownGit/#/home), paste the URL unto the textbox
+3. You have 2 options: 
   * You can download the file directly to your computer
   *	You can create a "download link" 
 
@@ -43,9 +43,9 @@ If you want to download a specific file or folder, here are some alternatives.
 
 ### Download a ZIP archive found in a module -- instructions 
 
-1 Go to the module folder 
-2 Confirm that there is a ZIP file there. Click on the ZIP 
-3 There will be a download button there
+1. Go to the module folder 
+2. Confirm that there is a ZIP file there. Click on the ZIP 
+3. There will be a download button there
 	- To download to local computer, click on the **Download** button 
 	- To download into a AWS instance, from the **Download** button, do a right-click (or control-click on Mac) and just copy the link address. Then in the ssh session, do a `wget <paste the copied url from GitHub here>` 
 
