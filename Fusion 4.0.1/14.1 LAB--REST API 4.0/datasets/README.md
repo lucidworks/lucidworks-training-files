@@ -26,3 +26,5 @@ chmod 600 ~/.kaggle/kaggle.json
 kaggle datasets download -d zynicide/wine-reviews -f winemag-data_first150k.csv -p ~/
 unzip winemag-data_first150k.csv.zip
 ```
+
+If you are interested in the kaggle-cli API and its commands, you can see: [https://github.com/Kaggle/kaggle-api](https://github.com/Kaggle/kaggle-api)
