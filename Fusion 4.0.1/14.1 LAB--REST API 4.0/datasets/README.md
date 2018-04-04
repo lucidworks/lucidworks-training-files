@@ -17,7 +17,7 @@ mkdir ~/.kaggle
 vi ~/.kaggle/kaggle.json
 type the letter "i" to be in **insert mode**
 paste the contents of your local json file (from step 3)
-to exit and save, type **[esc key] : wq!**
+to exit and save, type [esc key] : wq!
 chmod 600 ~/.kaggle/kaggle.json
 ```
   
