@@ -1,0 +1,186 @@
+<!-- ---------------------- -->
+<!-- CSS Overrides          -->
+<!-- ---------------------- -->
+<style>
+body {
+    margin: 0;
+    color: #595959;
+    background-color: #E1EEFB;
+}
+
+.tk-stl-bg-white {
+    background: #E1EEFB;
+}
+.result .tk-stl-title p a {
+    font-weight: 1000;
+    color: #7E1F86
+}
+.tk-stl-panel .tk-stl-title {
+    color: #7E1F86;
+    font-weight: 1000;
+    font-size: 1.0em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin: 3 3 3 3;
+    padding: 0 0 0 0;
+    border-bottom: 1px solid #e6eaec;
+    text-align: center;
+}
+
+ul.facet-list a, .filter-list-form .label {
+    color: #7E1F86;
+    font-weight: 1000;
+    cursor: pointer;
+}    
+</style>
+
+<!-- -------------------------------------------- -->
+<!-- Build the data model                         -->
+<!-- -------------------------------------------- -->
+
+<!-- Define a search platform to fetch data from -->
+<search:platform var="platform" conf="platforms.fusion.data"></search:platform>
+
+<!-- Search query based on the user's input -->
+<search:query var="query" parameters="*" res<search:platform var="platform" conf="platforms.fusion.data"></search:platform>
+
+<!-- Search query based on the user's input -->
+<search:query var="query" parameters="*" results-per-page="1">
+    <query:filter field="id" value="{{params.id}}"></query:filter>
+    <query:custom name="facet.mincount" value="1"></query:custom>
+</search:query>
+
+<!-- Send query to platform and retrieve documents back -->
+<search:response var="response" platform="platform" query="query" ng-if="query">
+    <widget:spinner></widget:spinner>
+</search:response>
+
+<!-- -------------------------------------------- -->
+<!-- Define the view                              -->
+<!-- -------------------------------------------- -->
+
+<helper:title title="{{(result | field:'Item_Descriptio n_s' | actualValue)}}"></helper:title>
+
+<!-- HEADER -->
+<layout:include file="views/partials/header.tpl.html" action="search" no-filter="true"></layout:include>
+
+<!-- CONTENT -->
+<layout:grid styling="row-offcanvas">
+
+    <!-- Animate page when response received -->
+    <layout:animate animation="animate-fadeInUp" on="response" layout-grid>
+
+        <!-- Summary -->
+        <layout:grid>
+            <layout:block md="1-1" styling="floated left width-1-5">
+                <div>
+                    <h3 style="margin-top:25px; margin-left:15px; color:#7E1F86;">
+                        Buy {{(response | result | field:'Item_Description_s' | actualValue)}} at
+                        {{(response | result | field:'Store_Name_s' | actualValue)}}
+                        &nbsp; -- see product and store information below
+                    </h3>
+                </div>
+            </layout:block>
+            <layout:block>
+                <div>
+                    <layout:block md="1-1" styling="center-content">
+                        <layout:grid>
+
+                            <!-- STORE PANEL -->
+                            <layout:block md="1-3">
+                                <layout:box>
+                                    <div styling="panel">
+                                        <p styling="title center-content">
+                                            Product Details                 
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Liquor Name:&Tab;&Tab;&Tab;{{(response | result | field:'Item_Description_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Liquor Category: {{(response | result | field:'Category_Name_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Bottle Volume (ml): {{(response | result | field:'Bottle_Volume__ml__s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Price: {{(response | result | field:'State_Bottle_Retail_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    No. bottles sold by this vendor: {{(response | result | field:'Bottles_Sold_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                    </div>
+                                </layout:box>
+                            </layout:block>
+                            
+                            <!-- STORE PANEL -->
+                            <layout:block md="1-3">
+                                <layout:box>
+                                    <div styling="panel">
+                                        <p styling="title center-content">
+                                            Store Information                 
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Store Name:&Tab;&Tab;&Tab;{{(response | result | field:'Store_Name_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Iowa store#: {{(response | result | field:'Store_Number_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    Store Address: {{(response | result | field:'Address_s' | actualValue)}} 
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p style="text-align:left;">
+                                            <layout:grid>
+                                                <layout:block styling="description">
+                                                    City: {{(response | result | field:'City_s' | actualValue)}}, IA {{(response | result | field:'Zip_Code_s' | actualValue)}}
+                                                </layout:block>
+                                            </layout:grid>
+                                        </p>
+                                        <p>
+                                        <a style="font-size: 1.0em; font-weight: 1000; color: #7E1F86" href="https://www.google.com/maps/place/{{(response | result | field:'Address_s' | actualValue)}} {{(response | result | field:'City_s' | actualValue)}}, IA {{(response | result | field:'Zip_Code_s' | actualValue)}}">Google Map the store --> </a>
+                                        </p>
+                                    </div>
+                                </layout:box>
+                            </layout:block>
+                        </layout:grid>
+                    </layout:block>
+                </div>
+            </layout:block>
+        </layout:grid>
+    </layout:animate>
+</layout:grid>
+
+<!-- LW Footer -->
+<layout:include file="views/partials/footer.tpl.html" action="search"></layout:include>
+
