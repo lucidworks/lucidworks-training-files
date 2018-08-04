@@ -21,8 +21,9 @@ spark-worker.jvmOptions = -Xmx8g -Xms8g
 
 #### Slide 14: Importing Data into Spark
 ```
-val allClicks = spark.read.parquet("/opt/fusion/training/bestbuysignals-parquet")
+val allClicks = spark.read.parquet("/opt/fusion/training/bestbuy-signals-parquet")
 ```
+
 
 
 
