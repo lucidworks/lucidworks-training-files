@@ -103,16 +103,32 @@ someHardGoods.write.format("solr").option("collection", "Labs").option("soft_com
 updatedClicks.write.format("solr").option("collection", "Labs_signals").option("soft_commit_secs", "10").save 
 ```
 
-
-
 ---
 
 Lab 2. 
-Slide xx
+Slide 7: Exploring Labs_signals
+Watch the PDF curly quotes 
+The correct search argument for the query should be with Straight Quotes as: 
+```
+query:"cd cases"
+```
+
 ---
 
 Lab 3. 
-Slide xx
+Slide 16:Creating a New Pipeline
+The Name is covered by the pic but it should be 
+```
+Labs_department_QI
+```
+
+
+Slide 24:Testing the Classifier Pipeline
+The Lab instruction reads:
+"In the Labs Query Workbench, execute the query ipod cover" 
+ **HOWEVER** the workbench uses previously loaded data from Labs Pipeline (not Labs department QI pipeline) 
+You need to specifically click on the "Load" button (top right) and use Labs department QI pipeline
+	
 ---
 
 Slide xx
