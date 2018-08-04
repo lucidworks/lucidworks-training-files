@@ -75,7 +75,7 @@ val now = System.currentTimeMillis()
 val maxDate = signalsDF.agg(max("timestamp_tdt")).take(1)(0).getAs[Timestamp](0).getTime
 val diff = now - maxDate
 val addTime = udf((t: Timestamp, diff : Long) => new Timestamp(t.getTime + diff))
-	
+
 //Remap some columns to bring the timestamps current
 val newDF = signalsDF.withColumnRenamed("timestamp_tdt", "orig_timestamp_tdt").withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt",lit(diff)))
 newDF
