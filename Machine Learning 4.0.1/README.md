@@ -105,8 +105,8 @@ updatedClicks.write.format("solr").option("collection", "Labs_signals").option("
 
 ---
 
-Lab 2. 
-Slide 7: Exploring Labs_signals
+### Lab 2. 
+#### Slide 7: Exploring Labs_signals
 Watch the PDF curly quotes 
 The correct search argument for the query should be with Straight Quotes as: 
 ```
@@ -115,15 +115,15 @@ query:"cd cases"
 
 ---
 
-Lab 3. 
-Slide 16:Creating a New Pipeline
+### Lab 3. 
+#### Slide 16:Creating a New Pipeline
 The Name is covered by the pic but it should be 
 ```
 Labs_department_QI
 ```
 
 
-Slide 24:Testing the Classifier Pipeline
+#### Slide 24:Testing the Classifier Pipeline
 The Lab instruction reads:
 "In the Labs Query Workbench, execute the query ipod cover" 
  **HOWEVER** the workbench uses previously loaded data from Labs Pipeline (not Labs department QI pipeline) 
