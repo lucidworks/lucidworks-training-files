@@ -19,6 +19,12 @@ spark-worker.jvmOptions = -Xmx8g -Xms8g
 ```
 
 
+#### Slide 13: Importing Data into Spark
+```
+val ecommerceFullCatalog = spark.read.parquet("/opt/fusion/training/ecommerce/")
+```
+
+
 #### Slide 14: Importing Data into Spark
 ```
 val allClicks = spark.read.parquet("/opt/fusion/training/bestbuy-signals-parquet")
