@@ -65,21 +65,21 @@ val usefulClicks = clicksWithCounts.filter("user_count > 2 AND item_count > 4").
 #### Slide 27: Updating Click Dates
 ```
 object SignalsTimestampUpdater extends Serializable {
-	import spark.implicits._
-	import org.apache.spark.sql.functions._
-	import org.apache.spark.sql.DataFrame
-	import java.sql.Timestamp
+import spark.implicits._
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.DataFrame
+import java.sql.Timestamp
 
-	def updateTimestamps(signalsDF: DataFrame): DataFrame = {
-		val now = System.currentTimeMillis()
-		val maxDate = signalsDF.agg(max("timestamp_tdt")).take(1)(0).getAs[Timestamp](0).getTime
-	val diff = now - maxDate
-	val addTime = udf((t: Timestamp, diff : Long) => new Timestamp(t.getTime + diff))
+def updateTimestamps(signalsDF: DataFrame): DataFrame = {
+val now = System.currentTimeMillis()
+val maxDate = signalsDF.agg(max("timestamp_tdt")).take(1)(0).getAs[Timestamp](0).getTime
+val diff = now - maxDate
+val addTime = udf((t: Timestamp, diff : Long) => new Timestamp(t.getTime + diff))
 	
-	//Remap some columns to bring the timestamps current
-	val newDF = signalsDF.withColumnRenamed("timestamp_tdt", "orig_timestamp_tdt").withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt",lit(diff)))
-	newDF
-	}
+//Remap some columns to bring the timestamps current
+val newDF = signalsDF.withColumnRenamed("timestamp_tdt", "orig_timestamp_tdt").withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt",lit(diff)))
+newDF
+}
 }
 
 ```
