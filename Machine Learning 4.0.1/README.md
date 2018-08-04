@@ -11,14 +11,15 @@ Only some PDF slides are listed here.
 Some of the dashes containing jvm values are pdf dashes which will not work in Fuaion 
 Here are the corrected copy/paste values: 
 
+```
 connectors-rpc.jvmOptions = -Xmx4g -Xms4g
 connectors-classic.jvmOptions = -Xmx4g -Xms4g -Dcom.lucidworks.connectors.pipelines.embedded=false
 solr.jvmOptions = -Xmx8g -Xms8g
 spark-worker.jvmOptions = -Xmx8g -Xms8g
+```
 
 
 #### Slide 14: Importing Data into Spark
-
 val allClicks = spark.read.parquet("/opt/fusion/training/bestbuysignals-parquet")
 
 ---
