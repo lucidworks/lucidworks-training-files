@@ -85,33 +85,17 @@ newDF
 ```
 
 
+#### Slide 28: Updating Click Dates
+```
+val updatedClicks = SignalsTimestampUpdater.updateTimestamps(usefulClicks)
+```
 
 
-object SignalsTimestampUpdater extends Serializable {
-import spark.implicits._
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.DataFrame
-import java.sql.Timestamp
-def updateTimestamps(signalsDF: DataFrame): DataFrame = {
-val now = System.currentTimeMillis()
-val maxDate =
-signalsDF.agg(max("timestamp_tdt")).take(1)(0).getAs[Timestamp](
-0).getTime
-val diff = now - maxDate
-val addTime = udf((t: Timestamp, diff : Long) => new
-Timestamp(t.getTime + diff))
-//Remap some columns to bring the timestamps current
-val newDF = signalsDF
-.withColumnRenamed("timestamp_tdt", "orig_timestamp_tdt")
-.withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt",
-lit(diff)))
-newDF
-}
-}
-
-
-
-
+#### Slide 29: Loading Data into Solr
+```
+someHardGoods.write.format("solr").option("collection", "Labs").option("soft_commit_secs", "10").save 
+updatedClicks.write.format("solr").option("collection", "Labs_signals").option("soft_commit_secs", "10").save 
+```
 
 
 
