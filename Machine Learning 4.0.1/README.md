@@ -386,7 +386,7 @@ Training data sampling fraction | 0.2 | Fraction of the training data to use
 
 #### Slide 2, Step 3
 ```
-tail -f ls -al ./fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusteringTask:
+tail -f /home/ubuntu/fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusteringTask:
 ```
 
 
@@ -397,14 +397,23 @@ Here are the steps clarified:
 2. Delete the Facet for **department** if exists 
 3. Add a Facet for **cluster_label**
 4. Add a second Facet for **freq_terms**
-5. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
+5. Add a third Facet for **shortDescription**
+6. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
 
 
 ```
-tail -f ls -al ./fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusteringTask:
+Explore the results by looking at the clustering labels, click on a few to see the
+documents within it. Do you think it needs to be splitted into more clusters, especially for
+the biggest cluster here? Also, click on the “short_doc” facet, do you find any problem
+those descriptions?
 ```
-
-
+should read 
+```
+Explore the results by looking at the clustering labels, click on a few to see the
+documents within it. Do you think it needs to be splitted into more clusters, especially for
+the biggest cluster here? Also, click on the “**shortDescription**” facet, do you find any problem
+those descriptions?
+```
 
 ---
 
