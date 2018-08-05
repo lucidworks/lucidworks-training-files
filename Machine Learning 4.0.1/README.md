@@ -401,9 +401,15 @@ Here are the steps clarified:
 6. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
 
 
-`Also, click on the “short_doc” facet, do you find any problem...`
+
+#### Slide 3, Step 5
+The line: 
+
+Also, click on the “short_doc” facet, do you find any problem...`
+
 should read 
-`Also, click on the` **“shortDescription”** `facet, do you find any problem...`
+
+Also, click on the` **“shortDescription”** `facet, do you find any problem...
 
 ---
 
