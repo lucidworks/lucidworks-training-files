@@ -370,10 +370,10 @@ curl -X POST 'http://localhost:8983/solr/Labs_signals/update?commit=true' -d '<d
 ---
 
 ### Lab 6. Clustering
-#### Slide 1, Exercise 1, Step 2
+#### Slide 1, Step 2
 There is not a clustering job already defined, so you have to **Add** a new **Document Clustering** job. 
+Click on the **Advanced** switch
 Use the following parameters for the Clustering job: 
-
 
 Parameter | Value | Explanation
 --- | --- | ---
@@ -381,6 +381,30 @@ Spark Job ID | Labs_Clustering | The ID for this Spark job. Used in the API to r
 Training Collection | Labs | Solr Collection containing documents to be clustered
 Field to Vectorize | longDescription | Solr field containing text training data for prediction/clustering instances
 Output Collection | Labs | Solr Collection to store model-labeled data to
+Training data sampling fraction | 0.2 | Fraction of the training data to use
+
+
+#### Slide 2, Step 3
+```
+tail -f ls -al ./fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusteringTask:
+```
+
+
+#### Slide 2, Step 4
+Here are the steps clarified: 
+
+1. Go to the Labs Collection -> Query Workbench 
+2. Delete the Facet for **department** if exists 
+3. Add a Facet for **cluster_label**
+4. Add a second Facet for **freq_terms**
+5. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
+
+
+```
+tail -f ls -al ./fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusteringTask:
+```
+
+
 
 ---
 
