@@ -1,7 +1,8 @@
 # Machine Learning 4.0.1 Labs
-Some of the instruction in some Labs may be problematic to copy/paste from PFDF due to differences in your laptop OS and/or PDF rendering program. 
+Some of the instruction in some Labs may be problematic to copy/paste from PDF due to differences in your laptop OS and/or PDF rendering program. 
 To facilitate the Labs, below are slides where problematic text can be copied from. 
-Only some PDF slides are listed here. 
+Other minor errata and clarifications on Lab pages are listed here.  
+Not every Lab/Slide are listed here, only the ones that need attention. 
 
 ---
 
@@ -361,6 +362,54 @@ println(s"noDocsResults: ${noDocsResults.value}")
 ---
 
 ### Lab 5. Experiment Management
+#### Slide 29:Simulating User Activity
+```
+curl -X POST 'http://localhost:8983/solr/Labs_signals/update?commit=true' -d '<delete><query>app_id:("scala_traffic_gen")</query></delete>'
+```
+
+---
+
+### Lab 6. Clustering
+#### Slide 1, Exercise 1, Step 2
+There is not a clustering job already defined, so you have to **Add** a new **Document Clustering** job. 
+Use the following parameters for the Clustering job: 
+
+
+Parameter | Value | Explanation
+--- | --- | ---
+Spark Job ID | Labs_Clustering | The ID for this Spark job. Used in the API to reference this job
+Training Collection | Labs | Solr Collection containing documents to be clustered
+Field to Vectorize | longDescription | Solr field containing text training data for prediction/clustering instances
+Output Collection | Labs | Solr Collection to store model-labeled data to
+
+---
+
+### Lab 6. Clustering
+#### Slide xx:xxxx
+
+---
+
+### Lab 6. Clustering
+#### Slide xx:xxxx
+
+---
+
+### Lab 6. Clustering
+#### Slide xx:xxxx
+
+---
+
+### Lab 6. Clustering
+#### Slide xx:xxxx
+
+---
+
+### Lab 6. Clustering
+#### Slide xx:xxxx
+
+---
+
+### Lab 6. Clustering
 #### Slide xx:xxxx
 
 ---
