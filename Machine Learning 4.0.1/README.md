@@ -409,7 +409,28 @@ Also, click on the “short_doc” facet, do you find any problem...`
 
 should read 
 
-Also, click on the` **“shortDescription”** `facet, do you find any problem...
+Also, click on the **“shortDescription”** facet, do you find any problem...
+
+
+
+#### Slide 3, Steps 1-2 
+The steps are re-written/clarified here 
+
+1. Go to Jobs and **Create** a new job by clicking on Add->Cluster Labeling
+2. Click on the **Advanced** switch and use the following parameters for the Clustering Labeling job: 
+
+Parameter | Value | Explanation
+--- | --- | ---
+Spark Job ID | Labs\_Cluster\_Labeling | The ID for this Spark job. Used in the API to reference this job
+Training Collection | Labs | Solr Collection containing documents to be clustered
+Field to Vectorize | longDescription | Solr field containing text training data for prediction/clustering instances
+Training data filter query | manufacturer:Samsung OR manufacturer:Canon OR manufacturer:Toshiba OR manufacturer:LG OR manufacturer:GE | Solr query to use when loading training data
+
+Output Collection | Labs | Solr Collection to store model-labeled data to
+Input Field Name for Cluster ID | manufacturer | Input field name for cluster Id to help identify individual clusters.
+
+Training data sampling fraction | 0.2 | Fraction of the training data to use
+
 
 ---
 
