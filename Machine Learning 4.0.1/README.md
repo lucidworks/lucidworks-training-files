@@ -409,10 +409,12 @@ those descriptions?
 ```
 should read 
 ```
+`
 Explore the results by looking at the clustering labels, click on a few to see the
 documents within it. Do you think it needs to be splitted into more clusters, especially for
-the biggest cluster here? Also, click on the “**shortDescription**” facet, do you find any problem
+the biggest cluster here? Also, click on the` **“shortDescription”**`facet, do you find any problem
 those descriptions?
+`
 ```
 
 ---
