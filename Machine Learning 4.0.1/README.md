@@ -413,7 +413,7 @@ Also, click on the **“shortDescription”** facet, do you find any problem...
 
 
 
-#### Slide 3, Steps 1-2 
+#### Slide 4, Steps 1-2 
 The steps are re-written/clarified here 
 
 1. Go to Jobs and **Create** a new job by clicking on Add->Cluster Labeling
@@ -425,41 +425,14 @@ Spark Job ID | Labs\_Cluster\_Labeling | The ID for this Spark job. Used in the 
 Training Collection | Labs | Solr Collection containing documents to be clustered
 Field to Vectorize | longDescription | Solr field containing text training data for prediction/clustering instances
 Training data filter query | manufacturer:Samsung OR manufacturer:Canon OR manufacturer:Toshiba OR manufacturer:LG OR manufacturer:GE | Solr query to use when loading training data
-
 Output Collection | Labs | Solr Collection to store model-labeled data to
 Input Field Name for Cluster ID | manufacturer | Input field name for cluster Id to help identify individual clusters.
 
-Training data sampling fraction | 0.2 | Fraction of the training data to use
 
 
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
-
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
-
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
-
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
-
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
-
----
-
-### Lab 6. Clustering
-#### Slide xx:xxxx
+#### Slide 5, Steps 3 
+```
+tail -f /home/ubuntu/fusion/4.0.1/var/log/api/spark-driver-default.log | grep ClusterLabel:
+```
 
 ---
