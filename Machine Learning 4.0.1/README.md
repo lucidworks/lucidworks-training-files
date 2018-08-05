@@ -401,21 +401,9 @@ Here are the steps clarified:
 6. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
 
 
-```
-Explore the results by looking at the clustering labels, click on a few to see the
-documents within it. Do you think it needs to be splitted into more clusters, especially for
-the biggest cluster here? Also, click on the “short_doc” facet, do you find any problem
-those descriptions?
-```
+`Also, click on the “short_doc” facet, do you find any problem...`
 should read 
-```
-`
-Explore the results by looking at the clustering labels, click on a few to see the
-documents within it. Do you think it needs to be splitted into more clusters, especially for
-the biggest cluster here? Also, click on the` **“shortDescription”**`facet, do you find any problem
-those descriptions?
-`
-```
+`Also, click on the` **“shortDescription”** `facet, do you find any problem...`
 
 ---
 
