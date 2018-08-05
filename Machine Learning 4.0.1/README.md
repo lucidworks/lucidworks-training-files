@@ -1,7 +1,7 @@
 # Machine Learning 4.0.1 Labs
 Some of the instruction in some Labs may be problematic to copy/paste from PDF due to differences in your laptop OS and/or PDF rendering program. 
 To facilitate the Labs, below are slides where problematic text can be copied from. 
-Other minor errata and clarifications on Lab pages are listed here.  
+Other minor errata and clarifications on Lab pages are also listed here.  
 Not every Lab/Slide are listed here, only the ones that need attention. 
 
 ---
