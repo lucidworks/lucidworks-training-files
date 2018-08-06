@@ -404,9 +404,9 @@ Here are the steps clarified:
 
 
 #### Slide 3, Step 5
-The line: 
+In the line: 
 
-Also, click on the “short_doc” facet, do you find any problem...`
+**Also, click on the “short_doc” facet, do you find any problem...**
 
 **short_doc** is one of the labels under the **cluster_label** facet
 
