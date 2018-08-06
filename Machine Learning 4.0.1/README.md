@@ -140,7 +140,6 @@ You need to specifically click on the "Load" button (top right) and use Labs dep
 ### Lab 5. Experiment Management
 #### Slide 28:Simulating User Activity
 The lab is pointing to a different GitHub location, however, it is also here: 
-
 ```
 //val spark : org.apache.spark.sql.SparkSession = ???
 //val sc : org.apache.spark.SparkContext = ???
@@ -357,6 +356,7 @@ println(s"numClicks: ${numClicks.value}")
 println(s"numCarts: ${numCarts.value}")
 println(s"noDocsResults: ${noDocsResults.value}")
 
+```
 
 
 #### Slide 29:Simulating User Activity
