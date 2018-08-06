@@ -9,7 +9,7 @@ Not every Lab/Slide are listed here, only the ones that need attention.
 ### Lab 1. Spark and Data Prep  
 
 #### Slide 6: Machine Setup—Editing fusion.properties
-Some of the dashes containing jvm values are pdf dashes which will not work in Fuaion 
+Some of the dashes containing jvm values are pdf dashes which will not work in Fusion 
 Here are the corrected copy/paste values: 
 
 ```
