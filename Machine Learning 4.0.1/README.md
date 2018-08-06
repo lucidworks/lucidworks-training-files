@@ -108,8 +108,8 @@ updatedClicks.write.format("solr").option("collection", "Labs_signals").option("
 
 ### Lab 2. Working with Signals
 #### Slide 7: Exploring Labs_signals
-Watch the PDF curly quotes 
-The correct search argument for the query should be with Straight Quotes as: 
+Watch the PDF **curly quotes** 
+The correct search argument for the query should be with **Straight Quotes** as: 
 ```
 query:"cd cases"
 ```
@@ -118,7 +118,7 @@ query:"cd cases"
 
 ### Lab 3. Building a Query Intent Classifier
 #### Slide 16:Creating a New Pipeline
-The Name is covered by the pic but it should be 
+The Name is not shown because it is covered by another pic but it should be:  
 ```
 Labs_department_QI
 ```
@@ -366,8 +366,8 @@ curl -X POST 'http://localhost:8983/solr/Labs_signals/update?commit=true' -d '<d
 
 
 #### Slide 30:Simulating User Activity—Verifying Success
-* Note: you can tack the Job status in the Fusion UI 
-* You can also track the job in the Spark UI: http://<your aws ip>:8767
+* Note: you can track the Job status in the Fusion UI 
+* You can also track the job in the Spark UI at: http://\<your aws ip\>:8767
 
 ---
 
