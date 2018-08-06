@@ -357,15 +357,17 @@ println(s"numClicks: ${numClicks.value}")
 println(s"numCarts: ${numCarts.value}")
 println(s"noDocsResults: ${noDocsResults.value}")
 
-```
 
----
 
-### Lab 5. Experiment Management
 #### Slide 29:Simulating User Activity
 ```
 curl -X POST 'http://localhost:8983/solr/Labs_signals/update?commit=true' -d '<delete><query>app_id:("scala_traffic_gen")</query></delete>'
 ```
+
+
+#### Slide 30:Simulating User Activity—Verifying Success
+* Note: you can tack the Job status in the Fusion UI 
+* You can also track the job in the Spark UI: http://<your aws ip>:8767
 
 ---
 
@@ -397,8 +399,7 @@ Here are the steps clarified:
 2. Delete the Facet for **department** if exists 
 3. Add a Facet for **cluster_label**
 4. Add a second Facet for **freq_terms**
-5. Add a third Facet for **shortDescription**
-6. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
+5. On top, under **Choose Sort Field** select **dist_to_center**, Ascending order
 
 
 
@@ -407,9 +408,8 @@ The line:
 
 Also, click on the “short_doc” facet, do you find any problem...`
 
-should read 
+**short_doc** is one of the labels under the **cluster_label** facet
 
-Also, click on the **“shortDescription”** facet, do you find any problem...
 
 
 
