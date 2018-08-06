@@ -18,7 +18,7 @@ connectors-classic.jvmOptions = -Xmx4g -Xms4g -Dcom.lucidworks.connectors.pipeli
 solr.jvmOptions = -Xmx8g -Xms8g
 spark-worker.jvmOptions = -Xmx8g -Xms8g
 ```
-
+You can search the file for each of these properties and replace each one with the text here or you can just paste the 4 lines **at the bottom** of the file, which will override previous lines. 
 
 #### Slide 13: Importing Data into Spark
 ```
