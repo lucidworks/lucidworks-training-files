@@ -1,0 +1,12 @@
+{
+  "id" : "wines-datasource",
+  "connector" : "lucid.fileupload",
+  "type" : "fileupload",
+  "pipeline" : "Wines",
+  "parserId" : "wines-parser",
+  "properties" : {
+    "fileId" : "winemag-data_first150k.csv",
+    "collection" : "Wines",
+    "mediaType" : "application/octet-stream"
+  }
+}

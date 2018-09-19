@@ -1,0 +1,29 @@
+{
+  "id" : "wines-parser",
+  "enableMediaTypeDetection" : true,
+  "maxParserDepth" : 16,
+  "parserStages" : [ {
+    "type" : "csv",
+    "enabled" : true,
+    "mediaTypes" : [ ],
+    "pathPatterns" : [ ],
+    "errorHandling" : "mark",
+    "charset" : "detect",
+    "ignoreBOM" : false,
+    "autoDetect" : true,
+    "hasHeaders" : true,
+    "headers" : [ ],
+    "fillValue" : "<FILL>",
+    "trimWhitespace" : true,
+    "skipEmptyLines" : true,
+    "includeRowNumber" : true,
+    "commentHandling" : "ignore",
+    "maxRowLength" : 10485760,
+    "maxNumColumns" : 1000,
+    "maxColumnChars" : 10485760,
+    "columnHandling" : "default",
+    "inheritMediaTypes" : true,
+    "outputFieldPrefix" : ""
+  } ],
+  "editPanel" : { }
+}

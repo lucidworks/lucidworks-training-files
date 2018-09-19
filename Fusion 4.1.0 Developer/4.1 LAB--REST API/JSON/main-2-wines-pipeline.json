@@ -1,0 +1,15 @@
+{
+  "id" : "main",
+  "queryPipeline" : "Wines",
+  "collection" : "Wines",
+  "searchHandler" : "select",
+  "params" : [ {
+    "key" : "q",
+    "value" : "*:*",
+    "policy" : "replace"
+  }, {
+    "key" : "wt",
+    "value" : "xml",
+    "policy" : "replace"
+  } ]
+}	
