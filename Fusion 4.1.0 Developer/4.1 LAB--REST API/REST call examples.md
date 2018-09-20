@@ -7,11 +7,11 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Collections
 **cURL**
 
-`curl -u admin:Lucidworks1 -X PUT -H 'Content-type: application/json' -d '{"solrParams":{"replicationFactor":1,"numShards":1}}' http://localhost:8764/api/collections/Wines`
+`curl -u admin:Lucidworks1 -X PUT http://localhost:8764/api/collections/Wines -H 'Content-type: application/json' -d '{"solrParams":{"replicationFactor":1,"numShards":1}}'`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/collections/Wines`
 
-`curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/collections/Wines` (deletes only collection in fusion only) 
+`curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/collections/Wines` #deletes only the reference to the collection in fusion, not solr
 
 `curl -u admin:Lucidworks1 -X DELETE http://localhost:8764/api/collections/Wines?solr=True&purge=True&pipelines=True` (deletes all solr collections and associated pipelines) 
 
@@ -21,7 +21,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 
 `.\irm.ps1 -Method GET -Uri "http://localhost:8764/api/collections/Wines" `
 
-`.\irm.ps1 -Method DELETE -Uri "http://localhost:8764/api/collections/Wines"` #deletes only collection in fusion, not solr
+`.\irm.ps1 -Method DELETE -Uri "http://localhost:8764/api/collections/Wines"` #deletes only the reference to the collection in fusion, not solr
 
 `.\irm.ps1 -Method DELETE -Uri "http://localhost:8764/api/collections/Wines?solr=True&purge=True&pipelines=True"` #deletes all solr collections and associated pipelines
 
@@ -29,7 +29,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Datasources
 **cURL**
 
-`curl -u admin:Lucidworks1 -X POST -H 'Content-type: application/json' -d @JSON/wines-datasource.json http://localhost:8764/api/connectors/datasources`
+`curl -u admin:Lucidworks1 -X POST http://localhost:8764/api/connectors/datasources -H 'Content-type: application/json' -d @JSON/wines-datasource.json`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/connectors/datasources/wines-datasource`
 
@@ -47,7 +47,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Blobs
 **cURL**
 
-`curl -u admin:Lucidworks1 -X PUT --data-binary @datasets/winemag-data_first150k.csv -H 'Content-type: text/plain' http://localhost:8764/api/blobs/winemag-data_first150k.csv?resourceType=File`
+`curl -u admin:Lucidworks1 -X PUT http://localhost:8764/api/blobs/winemag-data_first150k.csv?resourceType=File --data-binary @datasets/winemag-data_first150k.csv -H 'Content-type: text/plain' http://localhost:8764/api/blobs/winemag-data_first150k.csv?resourceType=File`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/blobs/winemag-data_first150k.csv` (just returns the contents of the file)
 
@@ -65,7 +65,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Parsers
 **cURL**
 
-`curl -u admin:Lucidworks1 -X POST -H 'Content-type: application/json' -d @JSON/wines-parser.json http://localhost:8764/api/parsers`
+`curl -u admin:Lucidworks1 -X POST http://localhost:8764/api/parsers -H 'Content-type: application/json' -d @JSON/wines-parser.json`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/parsers/wines-parser`
 
@@ -83,7 +83,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Index Datasource Job
 **cURL**
 
-`curl -u admin:Lucidworks1 -X POST -H "Content-Type: application/json" http://localhost:8764/api/jobs/datasource:wines-datasource/actions -d '{"action": "start"}'`
+`curl -u admin:Lucidworks1 -X POST http://localhost:8764/api/jobs/datasource:wines-datasource/actions -H "Content-Type: application/json" -d '{"action": "start"}'`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/jobs/datasource:wines-datasource`
 
@@ -107,7 +107,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Apps
 **cURL**
 
-`curl -u admin:Lucidworks1 -X POST -H "Content-Type: application/json" -d @JSON/Wines-app.json http://localhost:8764/api/apps`
+`curl -u admin:Lucidworks1 -X POST http://localhost:8764/api/apps -H "Content-Type: application/json" -d @JSON/Wines-app.json`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/apps/General`
 
@@ -125,7 +125,7 @@ If you are executing these call from a local shell but connecting to a remote AW
 ### Object Links
 **cURL**
 
-`curl -u admin:Lucidworks1 -X PUT -H 'Content-type: application/json' -d  '{"subject" : "collection:Wines","object" : "app:General","linkType" : "inContextOf"}'  http://localhost:8764/api/links`
+`curl -u admin:Lucidworks1 -X PUT http://localhost:8764/api/links -H 'Content-type: application/json' -d  '{"subject" : "collection:Wines","object" : "app:General","linkType" : "inContextOf"}'`
 
 `curl -u admin:Lucidworks1 -X GET http://localhost:8764/api/links?subject=collection:Wines`
 
